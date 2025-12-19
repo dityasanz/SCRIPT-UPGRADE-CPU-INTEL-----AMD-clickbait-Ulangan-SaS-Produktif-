@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PLEEEEEAAAAASSSSEEEEE WOOOORRRRKKKKK</title>
+</head>
+<body>
+    <script>
+      //percobaan ke 27
+        let hargaBuku = 5000;
+        let tampungBayar = []; 
+        let tampungDiskon = []; 
+        
+     
+          let jumbel = parseInt(prompt("Ada berapa pembeli hari ini?"));
+       
+
+       
+ for (let i = 1; i <= jumbel; i++) {
+                let buku = parseInt(prompt("Pembeli ke-" + i + " Beli berapa buku?"));
+            
+
+            let totalBayar = 0;
+    let jenisDiskon = "";
+
+        if (buku <= 100) {
+                totalBayar = buku * hargaBuku;
+                jenisDiskon = "Tanpa Diskon";
+            } 
+        else if (buku <= 200) {
+               
+let harga100Pertama = 100 * hargaBuku * 0.95;  
+                let hargaSisa = (buku - 100) * hargaBuku * 0.85;  
+            totalBayar = harga100Pertama + hargaSisa;
+    jenisDiskon = "Kecil";
+            } 
+            else {
+               
+    let harga100Pertama = 100 * hargaBuku * 0.93;  
+  let harga100Kedua = 100 * hargaBuku * 0.83;    
+let hargaSisa = (buku - 200) * hargaBuku * 0.73;  
+             totalBayar = harga100Pertama + harga100Kedua + hargaSisa;
+     jenisDiskon = "Besar";
+            }
+ //semoga bekerja sehat selalu amin yeeyyyyyy
+           
+                tampungBayar.push(totalBayar);
+    tampungDiskon.push(jenisDiskon);
+            
+            console.log(`Pembeli ${i}: ${buku} buku = Rp (${totalBayar}) (${jenisDiskon})`);
+        }
+
+        
+        let totalPendapatan = 0;
+        let diskonKecil = 0;
+        let diskonBesar = 0;
+
+        //pliss working i wan tu die 
+
+        for (let i = 0; i < tampungBayar.length; i++) {
+            totalPendapatan += tampungBayar[i]; 
+            
+              if (tampungDiskon[i] == "Kecil") {
+      diskonKecil++;
+              } else if (tampungDiskon[i] == "Besar") {
+     diskonBesar++;
+            }
+        }
+
+        let rataRata = totalPendapatan / jumbel;
+
+       
+        console.log("=== DATA PENJUALAN BUKU ===");
+console.log("Daftar Bayar: ", tampungBayar);
+         console.log("Total Pendapatan: Rp " + totalPendapatan.toLocaleString('id-ID'));
+ console.log("Rata-rata Pendapatan: Rp " + rataRata.toLocaleString('id-ID'));
+        console.log("Jumlah Pembeli Diskon Kecil " + diskonKecil);
+                console.log("Jumlah Pembeli Diskon Besar " + diskonBesar);
+
+
+                //semoga bisa jalan amin 
+
+                //dalam nama tuhan yesus Allah Bapa disurga berikan lah hamba keteguhan sampai Script ini bisa menyala Amenn
+    </script>
+</body>
+</html>
